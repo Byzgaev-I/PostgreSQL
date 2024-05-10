@@ -166,16 +166,16 @@ pg_dump -U user -F c test_database > test_database.sql
 
 **Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца title для таблиц test_database?**
 
-Создайте бэкап в plain text формате:
+Создал бэкап в plain text формате:
 ```bash
 pg_dump -U username -W -F p -d test_database -f test_database_backup.sql
 ```
 **Редактирование SQL файла:**
 
-- Откройте файл test_database_backup.sql в текстовом редакторе.    
-- Найдите определение таблицы, в которой нужно добавить уникальность для столбца title.    
+- Открыл файл test_database_backup.sql в текстовом редакторе.    
+- Добавил уникальность для столбца title.    
   Это будет часть SQL команды CREATE TABLE.  
-- Добавьте ограничение UNIQUE на столбец title:  
+- Добавил ограничение UNIQUE на столбец title:  
 ```bash
 CREATE TABLE your_table_name (
     ...
@@ -183,7 +183,7 @@ CREATE TABLE your_table_name (
     ...
 );
 ```
-а если уже есть индекс для этого столбца, добавьте уникальный индекс:
+Добавил уникальный индекс бы, если уже есть индекс для этого столбца. (нарыл в инете)
 ```bash
 CREATE UNIQUE INDEX idx_unique_title ON your_table_name (title);
 ```
