@@ -172,10 +172,10 @@ pg_dump -U username -W -F p -d test_database -f test_database_backup.sql
 ```
 **Редактирование SQL файла:**
 
-- Открыл файл test_database_backup.sql в текстовом редакторе.    
-- Добавил уникальность для столбца title.    
-  Это будет часть SQL команды CREATE TABLE.  
-- Добавил ограничение UNIQUE на столбец title:  
+- Открыл файл test_database_backup.sql в текстовом редакторе.      
+- Добавил уникальность для столбца title.      
+  Это будет часть SQL команды CREATE TABLE.    
+- Добавил ограничение UNIQUE на столбец title:    
 ```bash
 CREATE TABLE your_table_name (
     ...
@@ -185,11 +185,12 @@ CREATE TABLE your_table_name (
 ```
 Добавил уникальный индекс бы, если уже есть индекс для этого столбца. (нарыл в инете)
 ```bash
-CREATE UNIQUE INDEX idx_unique_title ON your_table_name (title);
+CREATE UNIQUE INDEX idx_unique_title ON your_table_name (title);  
 ```
 
- **Добавление уникальности после восстановления**
- Если база данных уже восстановлена, вы можете добавить уникальное ограничение, используя команду ALTER TABLE. Для этого:  
+ **Добавление уникальности после восстановления**  
+ Если база данных уже восстановлена, вы можете добавить уникальное ограничение, используя команду ALTER TABLE. Для этого:    
+ 
  ```bash
 ALTER TABLE название_таблицы ADD CONSTRAINT название_ограничения UNIQUE (title);
 ```
