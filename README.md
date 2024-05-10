@@ -69,6 +69,7 @@ psql -U postgres
 SELECT attname, avg_width FROM pg_stats WHERE tablename='orders' ORDER BY avg_width DESC LIMIT 1;
 ```
 
+![image.jpg](https://github.com/Byzgaev-I/PostgreSQL/blob/main/2.png)
 
 
 
